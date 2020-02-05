@@ -2,11 +2,13 @@ import 'dart:io';
 
 import 'package:flutter/material.dart';
 import 'package:wheat_flour_mobile_app_ui_design/widget/app_bar.dart';
+import 'package:wheat_flour_mobile_app_ui_design/widget/buy_button.dart';
 import 'package:wheat_flour_mobile_app_ui_design/widget/details_and_rating.dart';
 import 'package:wheat_flour_mobile_app_ui_design/widget/product_and_price.dart';
+import 'package:wheat_flour_mobile_app_ui_design/widget/weight_qty.dart';
 
 class HomePage extends StatelessWidget {
-  int selectedRadioTile;
+ 
   @override
   Widget build(BuildContext context) {
     return Container(
@@ -127,138 +129,12 @@ class HomePage extends StatelessWidget {
                           ProductDescAndRating(),
 
                           SizedBox( height: 40,),
-                          
-                          Row(
-                            mainAxisSize: MainAxisSize.max,
-                            mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                            children: <Widget>[
-                              Column(
-                                mainAxisAlignment: MainAxisAlignment.start,
-                                children: <Widget>[
-                                  Text(
-                                    'WEIGHT',
-                                    style: TextStyle(
-                                        color: Color(0XFF9B9793),
-                                        fontWeight: FontWeight.w600),
-                                  ),
-                                  // SizedBox(height: 10,),
-                                  Theme(
-                                    data: Theme.of(context).copyWith(
-                                      unselectedWidgetColor: Colors.red,
-                                      // disabledColor: Colors.blue,
-                                    ),
-                                    child: Row(
-                                      mainAxisAlignment:
-                                          MainAxisAlignment.start,
-                                      // mainAxisSize: MainAxisSize.max,
-                                      children: <Widget>[
-                                        Radio(
-                                          value: 0,
-                                          groupValue: selectedRadioTile,
-                                          onChanged: (val) {
-                                            selectedRadioTile = val;
-                                          },
-                                          activeColor: Colors.deepOrangeAccent,
-                                        ),
-                                        Text(
-                                          '5kg',
-                                          style: new TextStyle(
-                                            fontSize: 14.0,
-                                            color: Color(0XFF5A3923),
-                                          ),
-                                        ),
-                                        SizedBox(width: 30),
-                                        Radio(
-                                          value: 0,
-                                          groupValue: selectedRadioTile,
-                                          onChanged: (val) {
-                                            selectedRadioTile = val;
-                                          },
-                                          activeColor: Colors.deepOrangeAccent,
-                                        ),
-                                        Text(
-                                          '10kg',
-                                          style: new TextStyle(
-                                            fontSize: 14.0,
-                                            color: Color(0XFF5A3923),
-                                          ),
-                                        ),
-                                        // Expanded(
-                                        //                                         flex: 7,
-                                        //                                         child: RadioListTile(
-                                        //       groupValue: selectedRadioTile,
-                                        //       onChanged: (val){},
-                                        //       title: new Text("Omnivore"),
-                                        //       value: 2,
-                                        //     ),
-                                        // ),
-                                      ],
-                                    ),
-                                  ),
-                                ],
-                              ),
-                              SizedBox(
-                                width: 10,
-                              ),
-                              Column(
-                                mainAxisAlignment: MainAxisAlignment.start,
-                                children: <Widget>[
-                                  Text(
-                                    'QTY',
-                                    style: TextStyle(
-                                        color: Color(0XFF9B9793),
-                                        fontWeight: FontWeight.w600),
-                                  ),
-                                  // SizedBox(height: 2,),
-                                  Row(
-                                    mainAxisAlignment:
-                                        MainAxisAlignment.spaceEvenly,
-                                    children: <Widget>[
-                                      IconButton(
-                                          icon: Icon(
-                                            Icons.plus_one,
-                                            color: Colors.red,
-                                          ),
-                                          onPressed: null),
-                                      Text(
-                                        "2 pc",
-                                        style: TextStyle(
-                                            fontSize: 14,
-                                            color: Color(0XFF5A3923),
-                                            fontWeight: FontWeight.w500),
-                                      ),
-                                      IconButton(
-                                          icon: Icon(
-                                            Icons.receipt,
-                                            color: Colors.red,
-                                          ),
-                                          onPressed: null)
-                                    ],
-                                  ),
-                                ],
-                              ),
-                            ],
-                          ),
-                          SizedBox(
-                            height: 30,
-                          ),
-                          RaisedButton(
-                            splashColor: Color(0xFFF9F9F8),
-                            onPressed: () {},
-                            child: Text(
-                              "Buy Now",
-                              style: TextStyle(
-                                color: Color(0xFFF9F9F8),
-                              ),
-                            ),
-                            color: Colors.red,
-                            shape: RoundedRectangleBorder(
-                              borderRadius: new BorderRadius.circular(18.0),
-                              side: BorderSide(color: Colors.red),
-                            ),
-                            padding: EdgeInsets.only(
-                                left: 60, right: 60, top: 10, bottom: 10),
-                          ),
+
+                          WeightAndQty(),
+
+                          SizedBox(height: 30,),
+
+                          BuyButton(),
                         ],
                       ),
                     )
