@@ -1,0 +1,4 @@
+#Wed Feb 05 14:44:32 WAT 2020
+base.0=/Users/mac/AndroidStudioProjects/Flutter_work/Wheat-flour-mobile-app-ui-design/build/app/intermediates/dex/debug/mergeDexDebug/out/classes.dex
+path.0=classes.dex
+renamed.0=classes.dex
